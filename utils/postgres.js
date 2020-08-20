@@ -27,5 +27,6 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.cameraData = require("../models/cameraData.model")(sequelize, Sequelize);
+db.userData   = require("../models/userData.model")(sequelize, Sequelize);
 
 module.exports = db;

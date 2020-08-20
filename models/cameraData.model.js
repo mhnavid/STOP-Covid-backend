@@ -1,10 +1,7 @@
 module.exports = (sequelize, Sequelize) => {
     const CameraData = sequelize.define("camera_data", {
         person: {
-            type: Sequelize.TEXT ,          
-        },
-        face: {
-            type: Sequelize.TEXT,           
+            type: Sequelize.STRING ,          
         },
         camera_id: {
             type: Sequelize.STRING

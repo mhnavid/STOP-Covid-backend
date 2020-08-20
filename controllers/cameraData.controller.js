@@ -3,10 +3,9 @@ const { Sequelize } = require('sequelize');
 const CameraData = db.cameraData;
 const Op = db.Sequelize.Op;
 
-exports.create = async(req, res) => {
+exports.create = async(req, res, imageURL) => {
     const cameraData = {
-        person: req.person,
-        face: req.face,
+        person: imageURL,
         camera_id: req.camera_id,
         mask_status: req.mask_status,
         division: req.division,

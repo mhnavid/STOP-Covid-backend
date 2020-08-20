@@ -4,10 +4,11 @@ const logger        = require('morgan');
 const cors          = require('cors');
 const cameraData    = require('./routes/cameraData');
 const allCameraData = require('./routes/allCameraData');
-const divisionDistrict = require('./routes/divisionDistrict');
-const findPersonByDistrict = require('./routes/findPersonbyDistrict');
-const findAllCamera = require('./routes/findAllCamera');
-const findDetailsByCamera = require('./routes/findDetailsByCamera');
+const divisionDistrict      = require('./routes/divisionDistrict');
+const findPersonByDistrict  = require('./routes/findPersonbyDistrict');
+const findAllCamera         = require('./routes/findAllCamera');
+const findDetailsByCamera   = require('./routes/findDetailsByCamera');
+const userRoutes    = require('./routes/user.routes');
 
 // public routes
 const maskDataByCamera = require('./routes/public_routes/public.maskDataByCamera');
@@ -32,6 +33,8 @@ app.use(findDetailsByCamera)
 app.use(maskDataByCamera);
 app.use(maskDataByDate);
 app.use(cameraDataByDate);
+
+app.use(userRoutes);
 
 app.use(function(req, res, next) {
   next(createError(404));
